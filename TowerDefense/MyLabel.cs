@@ -3,11 +3,12 @@
 //Dozent: Lukas Kumai
 using System;
 using System.Timers;
-using System.Windows.Controls;
+using System.Windows.Controls;  // Explicitly use WPF controls
+using Timer = System.Timers.Timer;
 
 namespace TowerDefense
 {
-    public class MyLabel : Label
+    public class MyLabel : System.Windows.Controls.Label  // Explicitly specify WPF Label
     {
         MainWindow mainWindow;
 

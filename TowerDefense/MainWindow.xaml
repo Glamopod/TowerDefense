@@ -4,14 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TowerDefense"
-        xmlns:Properties="clr-namespace:TowerDefense.Properties" x:Class="TowerDefense.MainWindow"
+        xmlns:Properties="clr-namespace:TowerDefense.Properties" 
+        x:Class="TowerDefense.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"  
-    
-    >
+        Title="MainWindow" Height="350" Width="525">
 
     <Canvas x:Name="canvas" >
-        <Image x:Name="Background" Height="352" Width="522" Source="./img/background.png" Cursor="Cross" Canvas.Top="-28" Canvas.Left="-5"/>
+        <Image x:Name="BackgroundImage" Height="352" Width="522" Source="./img/background.png" Cursor="Cross" Canvas.Top="-28" Canvas.Left="-5"/>
         <Ellipse x:Name="Circle1" Fill="#FFB9CBB7" Height="26" Canvas.Left="100" Canvas.Top="72" Width="26" RenderTransformOrigin="0.615,1.385"/>
         <Ellipse x:Name="Circle2" Fill="#FFB9CBB7" Height="26" Canvas.Left="210" Canvas.Top="149" Width="26" RenderTransformOrigin="0.615,1.385"/>
         <Ellipse x:Name="Circle3" Fill="#FFB9CBB7" Height="26" Canvas.Left="277" Canvas.Top="149" Width="26" RenderTransformOrigin="0.615,1.385"/>

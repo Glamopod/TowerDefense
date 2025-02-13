@@ -1,5 +1,4 @@
-﻿
-//Author:Tahsin Tiryaki
+﻿//Author:Tahsin Tiryaki
 //Date:19.05.2016
 //Dozent: Lukas Kumai
 using System;
@@ -14,11 +13,11 @@ using System.Windows.Shapes;
 
 namespace TowerDefense
 {
-    public class BulletImage : Image
+    public class BulletImage : System.Windows.Controls.Image
     {
 
     }
-    public class imageTower : Image
+    public class imageTower : System.Windows.Controls.Image
     {
 
     }
@@ -27,11 +26,11 @@ namespace TowerDefense
     {
         private MainController mainController;
         private MainWindow mainWindow;
-        private Point mousePoint;
+        private System.Windows.Point mousePoint;
         public List<Tower> towerListe;
 
         private BulletImage imageBullet = new BulletImage();
-        private Image imageTower;
+        private System.Windows.Controls.Image towerImage;
         private DoubleAnimation da;
         private Random random = new Random(Guid.NewGuid().GetHashCode());
         private int bulletRotation;
@@ -43,18 +42,18 @@ namespace TowerDefense
             this.mainController = mainController;
             mainWindow.PreviewMouseDown += MainWindow_PreviewMouseDown;
 
-            this.imageTower = new Image();
+            this.towerImage = new System.Windows.Controls.Image();
 
             Ellipse circle = sender as Ellipse;
-            Point circlePos = new Point(Canvas.GetLeft(circle) + 12, Canvas.GetTop(circle) + 12);
+            System.Windows.Point circlePos = new System.Windows.Point(Canvas.GetLeft(circle) + 12, Canvas.GetTop(circle) + 12);
 
-            imageTower.Source = mainWindow.tower.Source;
-            imageTower.Width = mainWindow.tower.Width;
-            imageTower.Height = mainWindow.tower.Height;
+            towerImage.Source = mainWindow.tower.Source;
+            towerImage.Width = mainWindow.tower.Width;
+            towerImage.Height = mainWindow.tower.Height;
 
-            Canvas.SetLeft(imageTower, -48 + circlePos.X);
-            Canvas.SetTop(imageTower, -48 + circlePos.Y);
-            mainWindow.canvas.Children.Add(imageTower);
+            Canvas.SetLeft(towerImage, -48 + circlePos.X);
+            Canvas.SetTop(towerImage, -48 + circlePos.Y);
+            mainWindow.canvas.Children.Add(towerImage);
 
 
             SoundPlayer audio = new SoundPlayer(TowerDefense.Properties.Resources.bell);
@@ -89,14 +88,14 @@ namespace TowerDefense
                 imageBullet.BeginAnimation(Canvas.TopProperty, da);
 
 
-                da.From = Canvas.GetLeft(this.imageTower) + 45;
+                da.From = Canvas.GetLeft(this.towerImage) + 45;
                 da.To = mousePoint.X;
 
                 double seconds = random.Next(2, 7);
                 da.Duration = new Duration(TimeSpan.FromSeconds(seconds / GameConst.BULLET_SPEED));
                 imageBullet.BeginAnimation(Canvas.LeftProperty, da);
 
-                da.From = Canvas.GetTop(this.imageTower) + 20;
+                da.From = Canvas.GetTop(this.towerImage) + 20;
                 da.To = mousePoint.Y;
 
                 da.Completed += AnimateBullet;

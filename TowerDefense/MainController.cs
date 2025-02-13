@@ -1,5 +1,4 @@
-﻿
-//https://gamedev.stackexchange.com/questions/57725/map-building-tower-defense
+﻿//https://gamedev.stackexchange.com/questions/57725/map-building-tower-defense
 //http://cartoonsmix.com/cartoons/cartoon-mouse-bomb.html
 // http://soundbible.com/2148-Chinese-Gong.html
 using System;
@@ -22,6 +21,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
 namespace TowerDefense
 {
     public class MainController
@@ -123,7 +123,7 @@ namespace TowerDefense
         }
 
         //DIeser wird oft aufgerufen  (Level_Anzahl X Virus_Group Anzahl )
-        public void GameStoryBoard(Image imageVirus, MainWindow mainWindow)
+        public void GameStoryBoard(System.Windows.Controls.Image imageVirus, MainWindow mainWindow)
         {        
             //Wenn alle gegner aus der Bildfläche rausgehen   
             this.virus.Group--;
@@ -186,3 +186,4 @@ namespace TowerDefense
         }
     }
 }
+#pragma warning restore SYSLIB0011

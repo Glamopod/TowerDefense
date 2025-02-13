@@ -8,6 +8,7 @@ using System.Text;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
+using Timer = System.Timers.Timer;  // or System.Threading.Timer depending on your needs
 
 namespace TowerDefense
 {
@@ -18,7 +19,7 @@ namespace TowerDefense
         private VirusView virusPathView;
         private MainController mainController;
         
-        Virus virus;
+        // private Virus virus;
 
         //Dieser wird von Wave Controller audgeführt.Hier wird der Weg von Gegnerishen einheiten vor definiert.
         public VirusPathController(MainWindow mainWindow,MainController mainController)

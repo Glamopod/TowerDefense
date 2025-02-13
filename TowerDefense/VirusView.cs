@@ -25,7 +25,7 @@ namespace TowerDefense
         private int step;
         private MainController mainController;
         private VirusPathList virusPathList;
-        private Image imageVirus;
+        private System.Windows.Controls.Image imageVirus;
 
 
 
@@ -44,11 +44,11 @@ namespace TowerDefense
             //this.mainController = MainWindow.maincontroller;
             this.mainController = mainController;
 
-            imageVirus = new Image();
+            imageVirus = new System.Windows.Controls.Image();
             imageVirus.Height = 23 * mainController.level.LevelDiffuculty/2;
             imageVirus.Width = 39 * mainController.level.LevelDiffuculty/2;
             //imageVirus.Source = mainWindow.virus.Source;
-            imageVirus.SetValue(Image.SourceProperty, mainWindow.virus.Source);
+            imageVirus.SetValue(System.Windows.Controls.Image.SourceProperty, mainWindow.virus.Source);
             imageVirus.SetValue(Canvas.TopProperty, mainWindow.virus.GetValue(Canvas.TopProperty));
             imageVirus.SetValue(Canvas.LeftProperty, mainWindow.virus.GetValue(Canvas.LeftProperty));
             // Canvas.SetLeft(imageVirus,Canvas.GetLeft(mainWindow.virus));            
@@ -96,7 +96,7 @@ namespace TowerDefense
             }
         }
 
-        public bool CheckCol(Image image)
+        public bool CheckCol(System.Windows.Controls.Image image)
         {
             double x = Canvas.GetLeft(image);
             double y = Canvas.GetTop(image);
